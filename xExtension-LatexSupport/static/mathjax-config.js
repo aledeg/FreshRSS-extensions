@@ -4,3 +4,7 @@ window.MathJax = {
     inlineMath: [['$', '$'], ['\\(', '\\)']]
   }
 };
+
+document.body.addEventListener('freshrss:load-more', e => {
+  MathJax.typeset()
+});

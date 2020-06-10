@@ -3,6 +3,7 @@
 class LatexSupportExtension extends Minz_Extension {
     public function init() {
         $this->loadMathjax();
+        $this->registerHook('entry_before_display', array($this, 'sanitize'));
     }
 
     private function loadMathjax() {
@@ -10,5 +11,19 @@ class LatexSupportExtension extends Minz_Extension {
         Minz_View::appendScript($this->getFileUrl($config, 'js'));
         $lib = 'mathjax/tex-chtml.js';
         Minz_View::appendScript($this->getFileUrl($lib, 'js'));
+    }
+
+    public function sanitize($entry) {
+        $content = str_replace(array(
+            '\\left⌊',
+            '\\right⌋',
+        ), array(
+            '\\left\\lfloor',
+            '\\right\\rfloor',
+        ), $entry->content());
+
+        $entry->_content($content);
+
+        return $entry;
     }
 }

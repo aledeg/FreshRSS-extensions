@@ -17,9 +17,13 @@ class LatexSupportExtension extends Minz_Extension {
         $content = str_replace(array(
             '\\left⌊',
             '\\right⌋',
+            '\\Complex',
+            '\\Reals'
         ), array(
             '\\left\\lfloor',
             '\\right\\rfloor',
+            '\mathbb{C}',
+            '\mathbb{R}',
         ), $entry->content());
 
         $entry->_content($content);

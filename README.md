@@ -28,4 +28,10 @@ Display images | Choose if images are displayed | True
 Display videos | Choose if videos are displayed | True
 
 ## Latex Support
-If enabled, it will load Mathjax to render LaTeX content.
+When enabled, it will load Mathjax to render LaTeX content.
+
+## Date Format
+When enabled, users will be able to format dates in the interface.
+They can choose to display dates relative to their browser current date,
+or to display dates adjusted to their browser current timezone, or to
+display dates in 12-hours format.

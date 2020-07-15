@@ -3,3 +3,5 @@
 */static/*
 !.gitkeep
 !mathjax*
+!date-format.js
+!moment-with-locales.js

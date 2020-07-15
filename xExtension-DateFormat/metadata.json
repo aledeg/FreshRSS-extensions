@@ -1,0 +1,8 @@
+{
+	"name": "Date Format",
+	"author": "Alexis Degrugillier",
+	"description": "Change how dates are displayed in the interface",
+	"version": "0.1.0",
+	"entrypoint": "DateFormat",
+	"type": "user"
+}

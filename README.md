@@ -26,6 +26,7 @@ Media height | Select a media height in viewport percentage | 70%
 Muted video | Choose if videos are muted or not | True
 Display images | Choose if images are displayed | True
 Display videos | Choose if videos are displayed | True
+Display original content | Choose if original contents are displayed | True
 
 ## Latex Support
 When enabled, it will load Mathjax to render LaTeX content.

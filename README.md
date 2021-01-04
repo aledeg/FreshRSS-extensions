@@ -12,11 +12,12 @@ At the moment, only the following resources are recognized:
 &nbsp; |match | type | support
 -------|------|------|--------
 1 | links finished by jpg, png, gif, bmp | image | full
-2 | imgur links finished by gifv | image | full
+2 | imgur links finished by gifv | video | full
 3 | imgur links finished with a token | image | partial
 4 | links finished by webm, mp4 | video | full
 5 | gfycat links finished with a token | video | full
 6 | redgifs links finished with a token | video | full
+7 | reddit links finished with a token | video | limited
 
 ### Configuration
 

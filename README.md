@@ -18,6 +18,7 @@ At the moment, only the following resources are recognized:
 5 | gfycat links finished with a token | video | full
 6 | redgifs links finished with a token | video | full
 7 | reddit links finished with a token | video | limited
+8 | reddit image galleries | image | limited
 
 ### Configuration
 

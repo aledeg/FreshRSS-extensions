@@ -13,9 +13,6 @@ class DateFormatExtension extends Minz_Extension {
         $this->registerTranslates();
         $this->getConfiguration();
 
-        Minz_View::appendScript($this->getFileUrl('moment-with-locales.js', 'js'));
-        Minz_View::appendScript($this->getFileUrl('date-format.js', 'js'));
-
         $current_user = Minz_Session::param('currentUser');
         $filename = 'configuration.' . $current_user . '.js';
         $filepath = join_path($this->getPath(), 'static', $filename);
@@ -23,6 +20,8 @@ class DateFormatExtension extends Minz_Extension {
         if (file_exists($filepath)) {
             Minz_View::appendScript($this->getFileUrl($filename, 'js'));
         }
+        Minz_View::appendScript($this->getFileUrl('moment-with-locales.js', 'js'));
+        Minz_View::appendScript($this->getFileUrl('date-format.js', 'js'));
     }
 
     public function handleConfigureAction() {

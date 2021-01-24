@@ -21,10 +21,17 @@ const hours12 = (e) => {
     e.innerHTML = content.replace(date.format('HH:mm'), date.format('hh:mm A'));
 }
 
+const customFormat = (e) => {
+    let date = dateFormatConfiguration.adjustedDates ? moment(e.dateTime) : moment.parseZone(e.dateTime);
+    e.innerHTML = date.format(dateFormatConfiguration.customFormat);
+}
+
 const dateFormat = () => {
     document.querySelectorAll('time[datetime]').forEach(e => {
         if (dateFormatConfiguration.relativeDates) {
             relativeDates(e);
+        } else if ("" !== dateFormatConfiguration.customFormat) {
+            customFormat(e);
         } else if (dateFormatConfiguration.adjustedDates) {
             adjustedDates(e);
         } else if (dateFormatConfiguration.hour12Dates) {

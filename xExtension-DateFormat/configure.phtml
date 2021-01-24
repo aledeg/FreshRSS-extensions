@@ -28,6 +28,13 @@
 		</div>
 	</div>
 
+	<div class="form-group">
+		<label for="custom-format" class="group-name"><?= _t('ext.date_format.custom_format'); ?></label>
+		<div class="group-controls">
+			<input type="text" name="custom-format" id="custom-format" value="<?= $this->custom_format ?>">
+		</div>
+	</div>
+
 	<div class="form-group form-actions">
 		<?php if (isset($this->permission_problem)) { ?>
 			<p class="alert alert-error"><?php echo _t('ext.reddit_image.permission_problem', $this->permission_problem); ?></p>

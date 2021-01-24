@@ -1,4 +1,4 @@
-const adjustedDates = function (e) {
+const adjustedDates = (e) => {
     let content = e.innerHTML;
     let date = moment(e.dateTime);
     let zoneDate = moment.parseZone(e.dateTime);
@@ -10,18 +10,18 @@ const adjustedDates = function (e) {
     e.innerHTML = content;
 }
 
-const relativeDates = function (e) {
+const relativeDates = (e) => {
     e.innerHTML = moment(e.dateTime).fromNow();
 }
 
-const hours12 = function (e) {
+const hours12 = (e) => {
     let content = e.innerHTML;
     let date = dateFormatConfiguration.adjustedDates ? moment(e.dateTime) : moment.parseZone(e.dateTime);
     let zoneDate = moment.parseZone(e.dateTime);
     e.innerHTML = content.replace(zoneDate.format('HH:mm'), date.format('hh:mm A'));
 }
 
-const dateFormat = function () {
+const dateFormat = () => {
     document.querySelectorAll('time[datetime]').forEach(e => {
         if (dateFormatConfiguration.relativeDates) {
             relativeDates(e);
@@ -35,7 +35,7 @@ const dateFormat = function () {
     });
 }
 
-window.onload = function () {
+window.onload = () => {
     moment.locale(context.i18n.language);
     dateFormat();
 }

@@ -52,3 +52,7 @@ There are different options to handle the date:
 >     white-space: pre;
 > }
 > ```
+
+**Note:**  
+There is a conflit with the "Mobile scroll menu" extension which prevents the date formatting on pages loaded in the background.
+It seems to occur only when using Firefox though.

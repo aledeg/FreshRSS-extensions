@@ -6,5 +6,7 @@ window.MathJax = {
 };
 
 document.body.addEventListener('freshrss:load-more', e => {
-  MathJax.typeset()
+  if ('function' === typeof MathJax.typeset) {
+    MathJax.typeset();
+  }
 });

@@ -27,6 +27,11 @@ const customFormat = (e) => {
 }
 
 const dateFormat = () => {
+    if ('function' !== typeof moment) {
+        return setTimeout(dateFormat, 50);
+    }
+
+    moment.locale(context.i18n.language);
     document.querySelectorAll('time[datetime]').forEach(e => {
         if (dateFormatConfiguration.relativeDates) {
             relativeDates(e);
@@ -43,8 +48,7 @@ const dateFormat = () => {
 }
 
 window.onload = () => {
-    moment.locale(context.i18n.language);
     dateFormat();
 }
 
-document.body.addEventListener('freshrss:load-more', dateFormat);
+document.body.addEventListener('freshrss:load-more', dateFormat, false);

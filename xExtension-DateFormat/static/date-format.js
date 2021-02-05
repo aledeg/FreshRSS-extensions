@@ -1,3 +1,5 @@
+let dateFormatConfiguration;
+
 const adjustedDates = (e) => {
     let content = e.innerHTML;
     let date = moment(e.dateTime);
@@ -23,15 +25,19 @@ const hours12 = (e) => {
 
 const customFormat = (e) => {
     let date = dateFormatConfiguration.adjustedDates ? moment(e.dateTime) : moment.parseZone(e.dateTime);
-    e.innerHTML = date.format(dateFormatConfiguration.customFormat);
+    e.innerHTML = date.format(dateFormatConfiguration.customFormat.replace(/\\n/g, '\n'));
 }
 
 const dateFormat = () => {
     if ('function' !== typeof moment) {
         return setTimeout(dateFormat, 50);
     }
+    if ('undefined' === typeof context) {
+        return setTimeout(dateFormat, 50);
+    }
 
     moment.locale(context.i18n.language);
+    dateFormatConfiguration = context.extensions["Date Format"].configuration;
     document.querySelectorAll('time[datetime]').forEach(e => {
         if (dateFormatConfiguration.relativeDates) {
             relativeDates(e);
@@ -51,4 +57,4 @@ window.onload = () => {
     dateFormat();
 }
 
-document.body.addEventListener('freshrss:load-more', dateFormat, false);
+document.addEventListener('freshrss:load-more', dateFormat, false);

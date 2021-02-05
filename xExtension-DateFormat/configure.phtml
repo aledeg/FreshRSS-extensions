@@ -4,7 +4,7 @@
     <div class="form-group">
 		<div class="group-controls">
 			<label class="checkbox" for="relative-dates">
-				<input type="checkbox" name="relative-dates" id="relative-dates" value="1" <?= $this->relative_dates ? 'checked=true' : '' ?>/>
+				<input type="checkbox" name="relative-dates" id="relative-dates" value="1" <?= $this->getRelativeDates() ? 'checked=true' : '' ?>/>
 				<?= _t('ext.date_format.relative_dates'); ?>
 			</label>
 		</div>
@@ -13,7 +13,7 @@
     <div class="form-group">
 		<div class="group-controls">
 			<label class="checkbox" for="adjusted-dates">
-				<input type="checkbox" name="adjusted-dates" id="adjusted-dates" value="1" <?= $this->adjusted_dates ? 'checked=true' : '' ?>/>
+				<input type="checkbox" name="adjusted-dates" id="adjusted-dates" value="1" <?= $this->getAdjustedDates() ? 'checked=true' : '' ?>/>
 				<?= _t('ext.date_format.adjusted_dates'); ?>
 			</label>
 		</div>
@@ -22,7 +22,7 @@
     <div class="form-group">
 		<div class="group-controls">
 			<label class="checkbox" for="hour12-dates">
-				<input type="checkbox" name="hour12-dates" id="hour12-dates" value="1" <?= $this->hour12_dates ? 'checked=true' : '' ?>/>
+				<input type="checkbox" name="hour12-dates" id="hour12-dates" value="1" <?= $this->getHour12Dates() ? 'checked=true' : '' ?>/>
 				<?= _t('ext.date_format.hour12_dates'); ?>
 			</label>
 		</div>
@@ -31,18 +31,14 @@
 	<div class="form-group">
 		<label for="custom-format" class="group-name"><?= _t('ext.date_format.custom_format'); ?></label>
 		<div class="group-controls">
-			<input type="text" name="custom-format" id="custom-format" value="<?= $this->custom_format ?>">
+			<input type="text" name="custom-format" id="custom-format" value="<?= $this->getCustomFormat() ?>">
 		</div>
 	</div>
 
 	<div class="form-group form-actions">
-		<?php if (isset($this->permission_problem)) { ?>
-			<p class="alert alert-error"><?php echo _t('ext.reddit_image.permission_problem', $this->permission_problem); ?></p>
-		<?php } else { ?>
-			<div class="group-controls">
-				<button type="submit" class="btn btn-important"><?php echo _t('gen.action.submit'); ?></button>
-				<button type="reset" class="btn"><?php echo _t('gen.action.cancel'); ?></button>
-			</div>
-		<?php } ?>
+		<div class="group-controls">
+			<button type="submit" class="btn btn-important"><?php echo _t('gen.action.submit'); ?></button>
+			<button type="reset" class="btn"><?php echo _t('gen.action.cancel'); ?></button>
+		</div>
 	</div>
 </form>

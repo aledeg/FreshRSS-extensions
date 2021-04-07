@@ -1,3 +1,13 @@
+> **Notice**: this repository is now archived because it was complicated to maintain 3 extensions in a single repository. Now those 3 extensions have their own
+> repository. Here are the links to those:
+> 
+> - [aledeg/xExtension-DateFormat: A FreshRSS extension to format dates](https://github.com/aledeg/xExtension-DateFormat)
+> - [aledeg/xExtension-LatexSupport: A FreshRSS extension which add LaTeX support](https://github.com/aledeg/xExtension-LatexSupport)
+> - [aledeg/xExtension-RedditImage: A FreshRSS extension to process Reddit feeds](https://github.com/aledeg/xExtension-RedditImage)
+> 
+> I've kept the history of changes and all open issues. At the moment, I haven't transfered tags and release since I don't know if it's a good idea.
+
+
 # FreshRSS-extensions
 FreshRSS unofficial extensions
 
